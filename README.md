@@ -36,7 +36,7 @@ You can download the PDF and Epub version of this repository from the latest run
 |6  | [What is the purpose of the array splice method](#what-is-the-purpose-of-the-array-splice-method)|
 |7  | [What is the difference between slice and splice](#what-is-the-difference-between-slice-and-splice)|
 |8  | [How do you compare Object and Map](#how-do-you-compare-object-and-map)|
-|9  | [What is the difference between == and === operators](#what-is-the-difference-between-==-and-===-operators)|
+|9  | [What is the difference between == and === operators](#what-is-the-difference-between--and--operators)|
 |10 | [What are lambda or arrow functions](#what-are-lambda-or-arrow-functions)|
 |11 | [What is a first class function](#what-is-a-first-class-function)|
 |12 | [What is a first order function](#what-is-a-first-order-function)|
@@ -488,10 +488,8 @@ You can download the PDF and Epub version of this repository from the latest run
 
       ```javascript
       function Person(name){
-         var object = {};
-         object.name=name;
-         object.age=21;
-         return object;
+         this.name=name;
+         this.age=21;
       }
       var object = new Person("Sudheer");
       ```
@@ -3610,10 +3608,11 @@ You can download the PDF and Epub version of this repository from the latest run
 205. ### List down the collection of methods available on WeakSet
 
      Below are the list of methods available on WeakSet,
+     
      1. add(value): A new object is appended with the given value to the weakset
      2. delete(value): Deletes the value from the WeakSet collection.
      3. has(value): It returns true if the value is present in the WeakSet Collection, otherwise it returns false.
-     4. length(): It returns the length of weakSetObject
+     
      Let's see the functionality of all the above methods in an example,
 
      ```javascript
@@ -3624,7 +3623,6 @@ You can download the PDF and Epub version of this repository from the latest run
      weakSetObject.add(firstObject);
      weakSetObject.add(secondObject);
      console.log(weakSetObject.has(firstObject)); //true
-     console.log(weakSetObject.length()); //2
      weakSetObject.delete(secondObject);
      ```
 
